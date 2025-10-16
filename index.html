@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boyfriend's Birthday Collection</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Header Section -->
+        <header class="dashboard-header">
+            <!-- Birthday Greeting Section -->
+            <div class="header-greeting-container" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 220px; background: linear-gradient(135deg, #f5e9da 0%, #a47551 100%);">
+                <h1 style="font-size: 3rem; color: #5c3a1a; text-shadow: 2px 2px 8px #fff; margin: 0; letter-spacing: 2px;">HAPPY BIRTHDAY DINSANG</h1>
+            </div>
+        </header>
+
+        <!-- Navigation Menu -->
+        <nav class="dashboard-nav">
+            <button class="nav-btn active" data-section="overview">Overview</button>
+            <button class="nav-btn" data-section="playlist">🎵 Special Songs</button>
+            <button class="nav-btn" data-section="memories">Memories</button>
+            <button class="nav-btn" data-section="messages">Love Messages</button>
+            <button class="nav-btn" data-section="save-queen">Save the Queen</button>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="dashboard-content">
+            <!-- Playlist Section -->
+            <section id="playlist" class="content-section">
+                <div class="section-header" style="justify-content: center; text-align: center;">
+                    <h2>💖 Special Songs For You 💖</h2>
+                    <p style="color: #a47551; font-size: 1.1rem; margin: 10px 0 0 0; font-style: italic;">Made with love for your special day</p>
+                </div>
+
+                <!-- Special Songs Folder -->
+                <div class="playlist-folder-content" id="special-songs" style="margin-bottom: 24px;">
+                    <div class="playlist-list" style="display: flex; flex-direction: column; align-items: center; gap: 20px; max-width: 600px; margin: 0 auto;">
+
+                        <!-- Every Second -->
+                        <div class="playlist-card" style="background: linear-gradient(135deg, #fff8f0, #fef7ed); border-radius: 20px; box-shadow: 0 8px 25px rgba(164, 117, 81, 0.15); padding: 20px; width: 100%; border: 2px solid rgba(164, 117, 81, 0.1); position: relative;">
+                            <div style="font-size: 1.2rem; color: #a47551; font-family: 'Poppins', sans-serif; font-weight: 600; margin-bottom: 15px; text-align: center; letter-spacing: 0.5px;">
+                                🎵 Every Second
+                            </div>
+                            <div class="custom-audio-player">
+                                <button class="play-btn" onclick="playSong(this)" data-audio-id="song1">▶️</button>
+                                <div class="progress-container" style="display: none;">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill"></div>
+                                    </div>
+                                    <div class="time-display">0:00 / 0:00</div>
+                                </div>
+                                <audio id="song1" preload="metadata">
+                                    <source src="dashboard/playlist/Every Second.mp3" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+
+                        <!-- LOVE LOOKS PRETTY ON YOU -->
+                        <div class="playlist-card" style="background: linear-gradient(135deg, #fff8f0, #fef7ed); border-radius: 20px; box-shadow: 0 8px 25px rgba(164, 117, 81, 0.15); padding: 20px; width: 100%; border: 2px solid rgba(164, 117, 81, 0.1); position: relative;">
+                            <div style="font-size: 1.2rem; color: #a47551; font-family: 'Poppins', sans-serif; font-weight: 600; margin-bottom: 15px; text-align: center; letter-spacing: 0.5px;">
+                                💕 LOVE LOOKS PRETTY ON YOU
+                            </div>
+                            <div class="custom-audio-player">
+                                <button class="play-btn" onclick="playSong(this)" data-audio-id="song2">▶️</button>
+                                <div class="progress-container" style="display: none;">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill"></div>
+                                    </div>
+                                    <div class="time-display">0:00 / 0:00</div>
+                                </div>
+                                <audio id="song2" preload="metadata">
+                                    <source src="dashboard/playlist/LOVE LOOKS PRETTY ON YOU.mp3" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+
+                        <!-- Stuck with U -->
+                        <div class="playlist-card" style="background: linear-gradient(135deg, #fff8f0, #fef7ed); border-radius: 20px; box-shadow: 0 8px 25px rgba(164, 117, 81, 0.15); padding: 20px; width: 100%; border: 2px solid rgba(164, 117, 81, 0.1); position: relative;">
+                            <div style="font-size: 1.2rem; color: #a47551; font-family: 'Poppins', sans-serif; font-weight: 600; margin-bottom: 15px; text-align: center; letter-spacing: 0.5px;">
+                                💑 Stuck with U
+                            </div>
+                            <div class="custom-audio-player">
+                                <button class="play-btn" onclick="playSong(this)" data-audio-id="song3">▶️</button>
+                                <div class="progress-container" style="display: none;">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill"></div>
+                                    </div>
+                                    <div class="time-display">0:00 / 0:00</div>
+                                </div>
+                                <audio id="song3" preload="metadata">
+                                    <source src="dashboard/playlist/Stuck with U.mp3" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+
+                        <!-- Taylor Swift - Lover -->
+                        <div class="playlist-card" style="background: linear-gradient(135deg, #fff8f0, #fef7ed); border-radius: 20px; box-shadow: 0 8px 25px rgba(164, 117, 81, 0.15); padding: 20px; width: 100%; border: 2px solid rgba(164, 117, 81, 0.1); position: relative;">
+                            <div style="font-size: 1.2rem; color: #a47551; font-family: 'Poppins', sans-serif; font-weight: 600; margin-bottom: 15px; text-align: center; letter-spacing: 0.5px;">
+                                💖 Taylor Swift - Lover
+                            </div>
+                            <div class="custom-audio-player">
+                                <button class="play-btn" onclick="playSong(this)" data-audio-id="song4">▶️</button>
+                                <div class="progress-container" style="display: none;">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill"></div>
+                                    </div>
+                                    <div class="time-display">0:00 / 0:00</div>
+                                </div>
+                                <audio id="song4" preload="metadata">
+                                    <source src="dashboard/playlist/Taylor Swift - Lover.mp3" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+
+                        <!-- The Way I Loved You -->
+                        <div class="playlist-card" style="background: linear-gradient(135deg, #fff8f0, #fef7ed); border-radius: 20px; box-shadow: 0 8px 25px rgba(164, 117, 81, 0.15); padding: 20px; width: 100%; border: 2px solid rgba(164, 117, 81, 0.1); position: relative;">
+                            <div style="font-size: 1.2rem; color: #a47551; font-family: 'Poppins', sans-serif; font-weight: 600; margin-bottom: 15px; text-align: center; letter-spacing: 0.5px;">
+                                💕 The Way I Loved You (Taylor's Version)
+                            </div>
+                            <div class="custom-audio-player">
+                                <button class="play-btn" onclick="playSong(this)" data-audio-id="song5">▶️</button>
+                                <div class="progress-container" style="display: none;">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill"></div>
+                                    </div>
+                                    <div class="time-display">0:00 / 0:00</div>
+                                </div>
+                                <audio id="song5" preload="metadata">
+                                    <source src="dashboard/playlist/The Way I Loved You (Taylors Version).mp3" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+
+                        <!-- Can't Take My Eyes Off You -->
+                        <div class="playlist-card" style="background: linear-gradient(135deg, #fff8f0, #fef7ed); border-radius: 20px; box-shadow: 0 8px 25px rgba(164, 117, 81, 0.15); padding: 20px; width: 100%; border: 2px solid rgba(164, 117, 81, 0.1); position: relative;">
+                            <div style="font-size: 1.2rem; color: #a47551; font-family: 'Poppins', sans-serif; font-weight: 600; margin-bottom: 15px; text-align: center; letter-spacing: 0.5px;">
+                                👀 Can't Take My Eyes Off of You - Matt Hoffman
+                            </div>
+                            <div class="custom-audio-player">
+                                <button class="play-btn" onclick="playSong(this)" data-audio-id="song6">▶️</button>
+                                <div class="progress-container" style="display: none;">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill"></div>
+                                    </div>
+                                    <div class="time-display">0:00 / 0:00</div>
+                                </div>
+                                <audio id="song6" preload="metadata">
+                                    <source src="dashboard/playlist/Can't take my eyes from u.mp3" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <script>
+            // Audio control - pause other songs when one plays and enhance audio experience
+            document.addEventListener('DOMContentLoaded', function() {
+                document.querySelectorAll('audio').forEach(audio => {
+                    audio.volume = 0.7; // Set initial volume to 70% for better listening
+
+                    // Add play/pause visual feedback
+                    audio.addEventListener('play', function() {
+                        // Navigate to playlist URL when play is clicked
+                        if (window.location.port !== '3001') {
+                            window.location.href = 'http://localhost:3001/playlist';
+                            return;
+                        }
+
+                        // Pause other playing audio
+                        document.querySelectorAll('audio').forEach(otherAudio => {
+                            if (otherAudio !== audio && !otherAudio.paused) {
+                                otherAudio.pause();
+                            }
+                        });
+
+                        // Add visual feedback to the currently playing card
+                        document.querySelectorAll('.playlist-card').forEach(card => {
+                            card.style.transform = 'scale(1)';
+                            card.style.boxShadow = '0 8px 25px rgba(164, 117, 81, 0.15)';
+                            card.style.border = '2px solid rgba(164, 117, 81, 0.1)';
+                        });
+
+                        // Highlight the currently playing card
+                        audio.closest('.playlist-card').style.transform = 'scale(1.02)';
+                        audio.closest('.playlist-card').style.boxShadow = '0 12px 35px rgba(164, 117, 81, 0.25)';
+                        audio.closest('.playlist-card').style.border = '2px solid #a47551';
+                    });
+
+                    audio.addEventListener('pause', function() {
+                        // Remove highlight when paused
+                        audio.closest('.playlist-card').style.transform = 'scale(1)';
+                        audio.closest('.playlist-card').style.boxShadow = '0 8px 25px rgba(164, 117, 81, 0.15)';
+                        audio.closest('.playlist-card').style.border = '2px solid rgba(164, 117, 81, 0.1)';
+                    });
+                });
+            });
+
+            // Add hover effects for better UX
+            document.addEventListener('DOMContentLoaded', function() {
+                document.querySelectorAll('.playlist-card').forEach(card => {
+                    card.addEventListener('mouseenter', function() {
+                        if (!this.querySelector('audio').paused && !this.querySelector('audio').paused === false) {
+                            // Only scale if not currently playing
+                            if (this.style.transform !== 'scale(1.02)') {
+                                this.style.transform = 'scale(1.01)';
+                            }
+                        }
+                    });
+
+                    card.addEventListener('mouseleave', function() {
+                        if (!this.querySelector('audio').paused && !this.querySelector('audio').paused === false) {
+                            // Only reset scale if not currently playing
+                            if (this.style.transform !== 'scale(1.02)') {
+                                this.style.transform = 'scale(1)';
+                            }
+                        }
+                    });
+                });
+            });
+
+            // Auto-navigate and play functionality
+            function navigateToPlaylist() {
+                const currentUrl = window.location.href;
+                const playlistUrl = 'http://localhost:3001/playlist';
+
+                if (!currentUrl.includes('/playlist')) {
+                    window.location.href = playlistUrl;
+                }
+            }
+
+            // Custom Audio Player Functionality
+            function playSong(button) {
+                const audioId = button.getAttribute('data-audio-id');
+                const audio = document.getElementById(audioId);
+                const progressContainer = button.parentNode.querySelector('.progress-container');
+                const progressBar = progressContainer.querySelector('.progress-bar');
+                const progressFill = progressContainer.querySelector('.progress-fill');
+                const timeDisplay = progressContainer.querySelector('.time-display');
+
+                if (!audio) {
+                    console.error('Audio element not found for ID:', audioId);
+                    return;
+                }
+
+                // Navigate to playlist if not already there
+                if (window.location.port !== '3001') {
+                    window.location.href = 'http://localhost:3001/playlist';
+                    return;
+                }
+
+                // Toggle play/pause
+                if (audio.paused) {
+                    // Pause all other audio
+                    document.querySelectorAll('audio').forEach(otherAudio => {
+                        if (otherAudio !== audio && !otherAudio.paused) {
+                            otherAudio.pause();
+                            // Reset other play buttons
+                            const otherBtns = document.querySelectorAll('.play-btn.playing');
+                            otherBtns.forEach(btn => {
+                                if (btn !== button) {
+                                    btn.textContent = '▶️';
+                                    btn.classList.remove('playing');
+                                    btn.parentNode.querySelector('.progress-container').style.display = 'none';
+                                }
+                            });
+                        }
+                    });
+
+                    // Play current audio
+                    audio.play().then(() => {
+                        button.textContent = '⏸️';
+                        button.classList.add('playing');
+                        progressContainer.style.display = 'flex';
+
+                        // Update visual feedback for the playing card
+                        document.querySelectorAll('.playlist-card').forEach(card => {
+                            card.style.transform = 'scale(1)';
+                            card.style.boxShadow = '0 8px 25px rgba(164, 117, 81, 0.15)';
+                            card.style.border = '2px solid rgba(164, 117, 81, 0.1)';
+                        });
+
+                        // Highlight current playing card
+                        button.closest('.playlist-card').style.transform = 'scale(1.02)';
+                        button.closest('.playlist-card').style.boxShadow = '0 12px 35px rgba(164, 117, 81, 0.25)';
+                        button.closest('.playlist-card').style.border = '2px solid #a47551';
+                    }).catch(error => {
+                        console.error('Error playing audio:', error);
+                        alert('Unable to play this song. The file might not be accessible.');
+                    });
+                } else {
+                    audio.pause();
+                    button.textContent = '▶️';
+                    button.classList.remove('playing');
+                    progressContainer.style.display = 'none';
+
+                    // Remove highlight
+                    button.closest('.playlist-card').style.transform = 'scale(1)';
+                    button.closest('.playlist-card').style.boxShadow = '0 8px 25px rgba(164, 117, 81, 0.15)';
+                    button.closest('.playlist-card').style.border = '2px solid rgba(164, 117, 81, 0.1)';
+                }
+
+                // Update progress
+                audio.addEventListener('timeupdate', function() {
+                    const progress = (audio.currentTime / audio.duration) * 100;
+                    progressFill.style.width = progress + '%';
+
+                    const currentTime = formatTime(audio.currentTime);
+                    const duration = formatTime(audio.duration);
+                    timeDisplay.textContent = `${currentTime} / ${duration}`;
+                });
+
+                audio.addEventListener('ended', function() {
+                    button.textContent = '▶️';
+                    button.classList.remove('playing');
+                    progressContainer.style.display = 'none';
+                    progressFill.style.width = '0%';
+
+                    // Remove highlight
+                    button.closest('.playlist-card').style.transform = 'scale(1)';
+                    button.closest('.playlist-card').style.boxShadow = '0 8px 25px rgba(164, 117, 81, 0.15)';
+                    button.closest('.playlist-card').style.border = '2px solid rgba(164, 117, 81, 0.1)';
+                });
+            }
+
+            function formatTime(seconds) {
+                const mins = Math.floor(seconds / 60);
+                const secs = Math.floor(seconds % 60);
+                return `${mins}:${secs.toString().padStart(2, '0')}`;
+            }
+
+            // Enhanced play button functionality for legacy audio elements
+            document.addEventListener('DOMContentLoaded', function() {
+                document.querySelectorAll('audio').forEach((audio, index) => {
+                    // Auto-play after navigation
+                    audio.addEventListener('canplaythrough', function() {
+                        if (window.location.href.includes('/playlist') && audio.paused) {
+                            // Optional: Auto-play can be enabled here if needed
+                        }
+                    });
+                });
+            });
+            </script>
+            <!-- Overview Section -->
+            <section id="overview" class="content-section active">
+                <div class="welcome-card">
+                    <h2>Welcome to Our Special Collection! 🎂</h2>
+                    <p>This dashboard is dedicated to celebrating the most amazing person in my life.</p>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <h3>Songs</h3>
+                            <span class="stat-number" id="song-count">6</span>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Memories</h3>
+                            <span class="stat-number" id="memory-count">0</span>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Messages</h3>
+                            <span class="stat-number" id="message-count">0</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Save the Queen Game Section -->
+            <section id="save-queen" class="content-section">
+                <div id="save-queen-game-container"></div>
+            </section>
+
+
+            <!-- Memories Section -->
+            <section id="memories" class="content-section">
+                <div class="section-header">
+                    <h2>Special Memories 💭</h2>
+                    <button class="add-btn" onclick="collection.addMemory()">Add Memory</button>
+                </div>
+                <div class="memories-list" id="memories-list">
+                    <div class="memory-placeholder">
+                        <p>Share your favorite moments and memories here!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Messages Section -->
+            <section id="messages" class="content-section">
+                <div class="section-header">
+                    <h2>Love Messages 💌</h2>
+                    <button class="add-btn" onclick="collection.addMessage()">Add Message</button>
+                </div>
+                <div class="messages-list" id="messages-list">
+                    <div class="message-placeholder">
+                        <p>Write heartfelt messages and notes of love!</p>
+                    </div>
+                </div>
+            </section>
+
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="dashboard-footer">
+            <p>Made with 💕 for the most special person</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="dashboard/script.js"></script>
+</body>
+</html>

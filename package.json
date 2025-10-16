@@ -1,0 +1,26 @@
+{
+  "name": "birthday-collection-dashboard",
+  "version": "1.0.0",
+  "description": "A beautiful birthday collection dashboard for your loved one",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "serve": "python -m http.server 8000"
+  },
+  "keywords": [
+    "birthday",
+    "collection",
+    "dashboard",
+    "love",
+    "memories"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "dependencies": {
+    "node.js": "^0.0.1-security"
+  }
+}
