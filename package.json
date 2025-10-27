@@ -1,7 +1,7 @@
 {
   "name": "birthday-collection-dashboard",
   "version": "1.0.0",
-  "description": "A beautiful birthday collection dashboard for your loved one",
+  "description": "A birthday collection dashboard for DINSANGA",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

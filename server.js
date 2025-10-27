@@ -3,7 +3,22 @@ const fs = require('fs');
 const path = require('path');
 const url = require('url');
 
-const port = process.env.PORT || 3001;
+const port = parseInt(process.env.PORT) || 3001;
+
+// Function to find an available port
+function findAvailablePort(startPort) {
+  const net = require('net');
+  return new Promise((resolve) => {
+    const server = net.createServer();
+    server.listen(startPort, () => {
+      server.close();
+      resolve(startPort);
+    });
+    server.on('error', () => {
+      resolve(findAvailablePort(startPort + 1));
+    });
+  });
+}
 
 process.title = 'birthday-server'; // Set process title for easier management
 
@@ -21,7 +36,11 @@ const mimeTypes = {
   '.mp3': 'audio/mpeg',
   '.wav': 'audio/wav',
   '.ogg': 'audio/ogg',
-  '.m4a': 'audio/mp4'
+  '.m4a': 'audio/mp4',
+  '.mp4': 'video/mp4',
+  '.webm': 'video/webm',
+  '.avi': 'video/x-msvideo',
+  '.mov': 'video/quicktime'
 };
 
 const server = http.createServer((req, res) => {
@@ -151,10 +170,13 @@ const server = http.createServer((req, res) => {
   });
 });
 
-server.listen(port, () => {
-  console.log(`🎂 Birthday Collection Dashboard is running!`);
-  console.log(`📱 Open your browser and go to: http://localhost:${port}`);
-  console.log(`💖 Happy Birthday to your loved one!`);
+// Find an available port and start the server
+findAvailablePort(port).then(availablePort => {
+  server.listen(availablePort, () => {
+    console.log(`🎂 Birthday Collection Dashboard is running!`);
+    console.log(`📱 Open your browser and go to: http://localhost:${availablePort}`);
+    console.log(`💖 Happy Birthday to your loved one!`);
+  });
 });
 
 // Handle server shutdown gracefully

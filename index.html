@@ -11,8 +11,29 @@
         <!-- Header Section -->
         <header class="dashboard-header">
             <!-- Birthday Greeting Section -->
-            <div class="header-greeting-container" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 220px; background: linear-gradient(135deg, #f5e9da 0%, #a47551 100%);">
-                <h1 style="font-size: 3rem; color: #5c3a1a; text-shadow: 2px 2px 8px #fff; margin: 0; letter-spacing: 2px;">HAPPY BIRTHDAY DINSANG</h1>
+            <div class="header-greeting-container" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 320px; background: linear-gradient(135deg, #f5e9da 0%, #a47551 100%); padding: 30px 40px; position: relative;">
+                <!-- Top Image - Left Position -->
+                <div class="header-image-top-left" style="position: absolute; top: 30px; left: 40px; z-index: 2;">
+                    <img src="dashboard/images/DZZD7749.JPG" alt="Birthday Image 1" style="width: 120px; height: 120px; object-fit: cover; border-radius: 50%; border: 4px solid #fff; box-shadow: 0 6px 20px rgba(0,0,0,0.3); filter: brightness(1.1) contrast(1.1);">
+                </div>
+
+                <!-- Top Image - Right Position -->
+                <div class="header-image-top-right" style="position: absolute; top: 30px; right: 40px; z-index: 2;">
+                    <img src="dashboard/images/OUWR2795.JPG" alt="Birthday Image 3" style="width: 120px; height: 120px; object-fit: cover; border-radius: 50%; border: 4px solid #fff; box-shadow: 0 6px 20px rgba(0,0,0,0.3); filter: brightness(1.1) contrast(1.1);">
+                </div>
+
+                <!-- Birthday Message -->
+                <h1 style="font-size: 3rem; color: #5c3a1a; text-shadow: 2px 2px 8px #fff; margin: 0; letter-spacing: 2px; text-align: center; width: 100%; z-index: 1;">HAPPY BIRTHDAY DINSANG</h1>
+
+                <!-- Bottom Image - Left Position -->
+                <div class="header-image-bottom-left" style="position: absolute; bottom: 30px; left: 40px; z-index: 2;">
+                    <img src="dashboard/images/pic3.jpg" alt="Birthday Image 2" style="width: 120px; height: 120px; object-fit: cover; border-radius: 50%; border: 4px solid #fff; box-shadow: 0 6px 20px rgba(0,0,0,0.3); filter: brightness(1.1) contrast(1.1);">
+                </div>
+
+                <!-- Bottom Image - Right Position -->
+                <div class="header-image-bottom-right" style="position: absolute; bottom: 30px; right: 40px; z-index: 2;">
+                    <img src="dashboard/images/pic4.jpg" alt="Birthday Image 4" style="width: 120px; height: 120px; object-fit: cover; border-radius: 50%; border: 4px solid #fff; box-shadow: 0 6px 20px rgba(0,0,0,0.3); filter: brightness(1.1) contrast(1.1);">
+                </div>
             </div>
         </header>
 
@@ -163,11 +184,7 @@
 
                     // Add play/pause visual feedback
                     audio.addEventListener('play', function() {
-                        // Navigate to playlist URL when play is clicked
-                        if (window.location.port !== '3001') {
-                            window.location.href = 'http://localhost:3001/playlist';
-                            return;
-                        }
+                        // No need to navigate, playlist is on the same page
 
                         // Pause other playing audio
                         document.querySelectorAll('audio').forEach(otherAudio => {
@@ -245,11 +262,7 @@
                     return;
                 }
 
-                // Navigate to playlist if not already there
-                if (window.location.port !== '3001') {
-                    window.location.href = 'http://localhost:3001/playlist';
-                    return;
-                }
+                // No need to navigate, playlist is on the same page
 
                 // Toggle play/pause
                 if (audio.paused) {
@@ -378,8 +391,55 @@
                     <button class="add-btn" onclick="collection.addMemory()">Add Memory</button>
                 </div>
                 <div class="memories-list" id="memories-list">
-                    <div class="memory-placeholder">
-                        <p>Share your favorite moments and memories here!</p>
+                    <div class="memory-video-container">
+                        <div class="video-player-card" style="background: linear-gradient(135deg, #fff8f0, #fef7ed); border-radius: 20px; box-shadow: 0 8px 25px rgba(164, 117, 81, 0.15); padding: 30px; margin-bottom: 30px; border: 2px solid rgba(164, 117, 81, 0.1);">
+                            <h3 style="color: #a47551; text-align: center; margin-bottom: 20px; font-size: 1.3rem;">🎬 Memory Video Collection</h3>
+
+                            <!-- Video Player -->
+                            <div class="video-player-wrapper" style="text-align: center; margin-bottom: 25px;">
+                                <video id="memory-video" controls preload="metadata" style="width: 100%; max-width: 600px; border-radius: 15px; box-shadow: 0 6px 20px rgba(0,0,0,0.2);">
+                                    <source src="memories/Dins.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <p style="margin-top: 10px; font-size: 0.9rem; color: #666;">
+                                    If the video doesn't play, <a href="memories/Dins.mp4" target="_blank" style="color: #a47551;">click here to open directly</a>
+                                </p>
+                                <script>
+                                document.getElementById('memory-video').addEventListener('error', function() {
+                                    console.error('Video failed to load');
+                                    this.style.display = 'none';
+                                    this.nextElementSibling.innerHTML = '<p style="color: red;">Video failed to load. <a href="memories/Dins.mp4" target="_blank">Open video directly</a></p>';
+                                });
+                                </script>
+                            </div>
+
+                            <!-- Background Music Selection -->
+                            <div class="music-selection" style="margin-bottom: 25px;">
+                                <h4 style="color: #a47551; margin-bottom: 15px; text-align: center;">🎵 Play with Background Music</h4>
+                                <div class="music-buttons" style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+                                    <button class="music-btn" onclick="playVideoWithMusic('song1')" style="background: linear-gradient(135deg, #f0e6d6, #e8dcc6); color: #a47551; border: 2px solid #a47551; border-radius: 25px; padding: 8px 16px; font-size: 0.9rem; cursor: pointer; transition: all 0.3s ease;">Every Second</button>
+                                    <button class="music-btn" onclick="playVideoWithMusic('song2')" style="background: linear-gradient(135deg, #f0e6d6, #e8dcc6); color: #a47551; border: 2px solid #a47551; border-radius: 25px; padding: 8px 16px; font-size: 0.9rem; cursor: pointer; transition: all 0.3s ease;">LOVE LOOKS PRETTY ON YOU</button>
+                                    <button class="music-btn" onclick="playVideoWithMusic('song3')" style="background: linear-gradient(135deg, #f0e6d6, #e8dcc6); color: #a47551; border: 2px solid #a47551; border-radius: 25px; padding: 8px 16px; font-size: 0.9rem; cursor: pointer; transition: all 0.3s ease;">Stuck with U</button>
+                                    <button class="music-btn" onclick="playVideoWithMusic('song4')" style="background: linear-gradient(135deg, #f0e6d6, #e8dcc6); color: #a47551; border: 2px solid #a47551; border-radius: 25px; padding: 8px 16px; font-size: 0.9rem; cursor: pointer; transition: all 0.3s ease;">Taylor Swift - Lover</button>
+                                    <button class="music-btn" onclick="playVideoWithMusic('song5')" style="background: linear-gradient(135deg, #f0e6d6, #e8dcc6); color: #a47551; border: 2px solid #a47551; border-radius: 25px; padding: 8px 16px; font-size: 0.9rem; cursor: pointer; transition: all 0.3s ease;">The Way I Loved You</button>
+                                    <button class="music-btn" onclick="playVideoWithMusic('song6')" style="background: linear-gradient(135deg, #f0e6d6, #e8dcc6); color: #a47551; border: 2px solid #a47551; border-radius: 25px; padding: 8px 16px; font-size: 0.9rem; cursor: pointer; transition: all 0.3s ease;">Can't Take My Eyes Off You</button>
+                                </div>
+                            </div>
+
+                            <!-- Video Controls -->
+                            <div class="video-controls" style="text-align: center;">
+                                <button id="play-video-btn" onclick="toggleVideoPlayback()" style="background: linear-gradient(135deg, #a47551, #8b5a3c); color: white; border: none; border-radius: 50px; padding: 12px 24px; font-size: 1rem; cursor: pointer; margin-right: 10px; box-shadow: 0 4px 15px rgba(164, 117, 81, 0.3); transition: all 0.3s ease;">▶️ Play Video</button>
+                                <button onclick="stopVideoWithMusic()" style="background: linear-gradient(135deg, #ccc, #bbb); color: #666; border: none; border-radius: 50px; padding: 12px 24px; font-size: 1rem; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: all 0.3s ease;">⏹️ Stop All</button>
+                            </div>
+
+                            <!-- Volume Controls -->
+                            <div class="volume-controls" style="text-align: center; margin-top: 20px;">
+                                <label style="color: #a47551; margin-right: 10px;">Video Volume:</label>
+                                <input type="range" id="video-volume" min="0" max="1" step="0.1" value="0.7" onchange="setVideoVolume(this.value)" style="width: 150px; height: 6px; border-radius: 3px; background: #ddd; outline: none;">
+                                <label style="color: #a47551; margin-left: 15px; margin-right: 10px;">Music Volume:</label>
+                                <input type="range" id="music-volume" min="0" max="1" step="0.1" value="0.4" onchange="setMusicVolume(this.value)" style="width: 150px; height: 6px; border-radius: 3px; background: #ddd; outline: none;">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -391,8 +451,32 @@
                     <button class="add-btn" onclick="collection.addMessage()">Add Message</button>
                 </div>
                 <div class="messages-list" id="messages-list">
-                    <div class="message-placeholder">
-                        <p>Write heartfelt messages and notes of love!</p>
+                    <!-- Fun iMessage Style Chat -->
+                    <div class="chat-container">
+                        <div class="chat-bubble left">
+                            <div class="message-content">
+                                <p>Happy birthday ButtMan, Stick(Dinsanga)<br>I thih hma dam ang che.🥳🥳🥳<br><strong>~Zorama</strong></p>
+                                <span class="timestamp">10:04 AM</span>
+                            </div>
+                        </div>
+                        <div class="chat-bubble right">
+                            <div class="message-content">
+                                <p>Happy Birthday tih tawk mai,<br>Kumin chu ka lo haw nga ka hau phawt ang<br><strong>-msti</strong></p>
+                                <span class="timestamp">10:05 AM</span>
+                            </div>
+                        </div>
+                        <div class="chat-bubble left">
+                            <div class="message-content">
+                                <p>Mf nigga, heti khawp a hmangaih tu che inei hi<br>vannei inti hle rawh. Dam reng ang che<br><strong>- Seka</strong></p>
+                                <span class="timestamp">10:06 AM</span>
+                            </div>
+                        </div>
+                        <div class="chat-bubble right">
+                            <div class="message-content">
+                                <p>The stick has lvled up, Happy birthday<br><strong>- Kima</strong></p>
+                                <span class="timestamp">10:07 AM</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -406,7 +490,51 @@
         </footer>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+    // Navigation functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const navBtns = document.querySelectorAll('.nav-btn');
+        const sections = document.querySelectorAll('.content-section');
+
+        navBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const sectionId = this.getAttribute('data-section');
+
+                // Remove active class from all buttons and sections
+                navBtns.forEach(b => b.classList.remove('active'));
+                sections.forEach(s => s.classList.remove('active'));
+
+                // Add active class to clicked button and corresponding section
+                this.classList.add('active');
+                const targetSection = document.getElementById(sectionId);
+                if (targetSection) {
+                    targetSection.classList.add('active');
+                }
+            });
+        });
+
+        // Set default active section
+        const defaultBtn = document.querySelector('.nav-btn[data-section="overview"]');
+        if (defaultBtn) {
+            defaultBtn.classList.add('active');
+            document.getElementById('overview').classList.add('active');
+        }
+    });
+
+    // Prevent navigation to /playlist and handle locally
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('nav-btn') && e.target.dataset.section === 'playlist') {
+            e.preventDefault();
+            // Manually trigger the playlist section
+            const navBtns = document.querySelectorAll('.nav-btn');
+            const sections = document.querySelectorAll('.content-section');
+            navBtns.forEach(b => b.classList.remove('active'));
+            sections.forEach(s => s.classList.remove('active'));
+            e.target.classList.add('active');
+            document.getElementById('playlist').classList.add('active');
+        }
+    });
+    </script>
     <script src="dashboard/script.js"></script>
 </body>
 </html>
