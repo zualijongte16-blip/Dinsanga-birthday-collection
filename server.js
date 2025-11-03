@@ -5,6 +5,11 @@ const url = require('url');
 
 const port = parseInt(process.env.PORT) || 3001;
 
+// For Railway deployment
+if (process.env.NODE_ENV === 'production') {
+  console.log('🚂 Running on Railway - Production Mode');
+}
+
 // Function to find an available port
 function findAvailablePort(startPort) {
   const net = require('net');

@@ -1,11 +1,12 @@
 {
-  "name": "birthday-collection-dashboard",
+  "name": "dinsanga-bday",
   "version": "1.0.0",
   "description": "A birthday collection dashboard for DINSANGA",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js",
+    "build": "echo 'No build step required'",
     "serve": "python -m http.server 8000"
   },
   "keywords": [
@@ -13,14 +14,15 @@
     "collection",
     "dashboard",
     "love",
-    "memories"
+    "memories",
+    "dinsanga"
   ],
   "author": "Your Name",
   "license": "MIT",
   "engines": {
-    "node": ">=12.0.0"
+    "node": ">=14.0.0"
   },
   "dependencies": {
-    "node.js": "^0.0.1-security"
+    "express": "^4.18.2"
   }
 }

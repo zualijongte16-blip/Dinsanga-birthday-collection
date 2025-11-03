@@ -1,6 +1,6 @@
-# 🎂 Birthday Collection Dashboard
+# 🎂 Dinsanga Bday - Birthday Collection Dashboard
 
-A beautiful, romantic web dashboard to collect and showcase memories, photos, and love messages for your special someone's birthday!
+A beautiful, romantic web dashboard to collect and showcase memories, photos, and love messages for Dinsanga's birthday!
 
 ![Birthday Collection Dashboard](https://via.placeholder.com/800x400/667eea/ffffff?text=Birthday+Collection+Dashboard)
 
@@ -33,7 +33,7 @@ A beautiful, romantic web dashboard to collect and showcase memories, photos, an
    npm start
    ```
 
-4. **Open your browser** and go to: `http://localhost:3000`
+4. **Open your browser** and go to: `http://localhost:3001`
 
 ### Option 2: Python Server
 
@@ -49,15 +49,38 @@ Then open: `http://localhost:8000`
 
 Simply double-click `index.html` to open it directly in your browser.
 
+## 🚂 Deploy to Railway (Free 30-day trial)
+
+1. **Sign up for Railway**: Go to [railway.app](https://railway.app) and create a free account
+2. **Connect your GitHub**: Link your GitHub account to Railway
+3. **Create a new project**: Click "New Project" → "Deploy from GitHub repo"
+4. **Select this repository**: Choose the "dinsanga-bday" repository
+5. **Deploy**: Railway will automatically detect the Node.js app and deploy it
+6. **Get your URL**: Once deployed, Railway will provide a live URL (e.g., `https://dinsanga-bday.up.railway.app`)
+
+**Railway Free Tier Benefits:**
+- 30 days free trial
+- Automatic HTTPS
+- Custom domain support
+- No credit card required for trial
+- Automatic deployments from GitHub
+
 ## 📁 Project Structure
 
 ```
-birthday-collection-dashboard/
+dinsanga-bday/
 ├── index.html          # Main dashboard page
-├── styles.css          # Beautiful styling and responsive design
-├── script.js           # Interactive functionality
-├── server.js           # Node.js server (optional)
-├── package.json        # Node.js project configuration
+├── styles.css          # Main styles
+├── server.js           # Node.js server
+├── package.json        # Project configuration
+├── railway.json        # Railway deployment config
+├── .gitignore          # Git ignore rules
+├── dashboard/          # Dashboard assets
+│   ├── script.js       # Dashboard JavaScript
+│   ├── styles.css      # Dashboard styles
+│   ├── images/         # Birthday images
+│   └── playlist/       # Music files
+├── memories/           # Memory videos
 └── README.md          # This file
 ```
 
