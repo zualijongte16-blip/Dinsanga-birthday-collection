@@ -9,12 +9,14 @@ function createSaveTheQueenGame() {
     // Game box
     const gameBox = document.createElement('div');
     gameBox.style.margin = '0 auto';
-    gameBox.style.maxWidth = '420px';
+    gameBox.style.maxWidth = '100%';
+    gameBox.style.width = '100%';
     gameBox.style.background = 'rgba(255, 248, 240, 0.98)';
     gameBox.style.borderRadius = '15px';
     gameBox.style.boxShadow = '0 5px 20px rgba(164, 117, 81, 0.12)';
-    gameBox.style.padding = '30px 20px';
+    gameBox.style.padding = '20px 15px';
     gameBox.style.textAlign = 'center';
+    gameBox.style.boxSizing = 'border-box';
 
     // Title
     const title = document.createElement('h2');
@@ -30,39 +32,47 @@ function createSaveTheQueenGame() {
     instructions.style.marginBottom = '18px';
     gameBox.appendChild(instructions);
 
-    // Canvas
+    // Canvas - responsive sizing
     const canvas = document.createElement('canvas');
-    canvas.width = 400;
-    canvas.height = 220;
+    const containerWidth = Math.min(380, window.innerWidth - 60); // Account for padding
+    canvas.width = containerWidth;
+    canvas.height = Math.floor(containerWidth * 0.55); // Maintain aspect ratio
     canvas.style.background = '#f5e9da';
     canvas.style.border = '2px solid #a47551';
     canvas.style.borderRadius = '10px';
     canvas.style.display = 'block';
     canvas.style.margin = '0 auto 18px auto';
+    canvas.style.maxWidth = '100%';
+    canvas.style.height = 'auto';
     gameBox.appendChild(canvas);
 
-    // Mobile arrow controls
+    // Mobile arrow controls - responsive sizing
     const arrowControls = document.createElement('div');
     arrowControls.style.display = 'flex';
     arrowControls.style.flexDirection = 'column';
     arrowControls.style.alignItems = 'center';
     arrowControls.style.gap = '8px';
     arrowControls.style.marginBottom = '15px';
+    arrowControls.style.width = '100%';
+    arrowControls.style.maxWidth = '200px';
+    arrowControls.style.marginLeft = 'auto';
+    arrowControls.style.marginRight = 'auto';
 
     // Top row (Up button)
     const topRow = document.createElement('div');
     topRow.style.display = 'flex';
     topRow.style.justifyContent = 'center';
 
+    const buttonSize = Math.min(50, Math.max(40, canvas.width * 0.12)); // Responsive button size
     const upBtn = document.createElement('button');
     upBtn.textContent = '↑';
-    upBtn.style.width = '50px';
-    upBtn.style.height = '50px';
+    upBtn.style.width = buttonSize + 'px';
+    upBtn.style.height = buttonSize + 'px';
     upBtn.style.border = 'none';
     upBtn.style.borderRadius = '50%';
     upBtn.style.background = 'linear-gradient(135deg, #a47551 0%, #8b5a3c 100%)';
     upBtn.style.color = 'white';
-    upBtn.style.fontSize = '24px';
+    upBtn.style.fontSize = Math.floor(buttonSize * 0.48) + 'px';
     upBtn.style.cursor = 'pointer';
     upBtn.style.boxShadow = '0 4px 15px rgba(164, 117, 81, 0.3)';
     upBtn.style.transition = 'all 0.2s ease';
@@ -92,13 +102,13 @@ function createSaveTheQueenGame() {
 
     const leftBtn = document.createElement('button');
     leftBtn.textContent = '←';
-    leftBtn.style.width = '50px';
-    leftBtn.style.height = '50px';
+    leftBtn.style.width = buttonSize + 'px';
+    leftBtn.style.height = buttonSize + 'px';
     leftBtn.style.border = 'none';
     leftBtn.style.borderRadius = '50%';
     leftBtn.style.background = 'linear-gradient(135deg, #a47551 0%, #8b5a3c 100%)';
     leftBtn.style.color = 'white';
-    leftBtn.style.fontSize = '24px';
+    leftBtn.style.fontSize = Math.floor(buttonSize * 0.48) + 'px';
     leftBtn.style.cursor = 'pointer';
     leftBtn.style.boxShadow = '0 4px 15px rgba(164, 117, 81, 0.3)';
     leftBtn.style.transition = 'all 0.2s ease';
@@ -120,13 +130,13 @@ function createSaveTheQueenGame() {
 
     const downBtn = document.createElement('button');
     downBtn.textContent = '↓';
-    downBtn.style.width = '50px';
-    downBtn.style.height = '50px';
+    downBtn.style.width = buttonSize + 'px';
+    downBtn.style.height = buttonSize + 'px';
     downBtn.style.border = 'none';
     downBtn.style.borderRadius = '50%';
     downBtn.style.background = 'linear-gradient(135deg, #a47551 0%, #8b5a3c 100%)';
     downBtn.style.color = 'white';
-    downBtn.style.fontSize = '24px';
+    downBtn.style.fontSize = Math.floor(buttonSize * 0.48) + 'px';
     downBtn.style.cursor = 'pointer';
     downBtn.style.boxShadow = '0 4px 15px rgba(164, 117, 81, 0.3)';
     downBtn.style.transition = 'all 0.2s ease';
@@ -148,13 +158,13 @@ function createSaveTheQueenGame() {
 
     const rightBtn = document.createElement('button');
     rightBtn.textContent = '→';
-    rightBtn.style.width = '50px';
-    rightBtn.style.height = '50px';
+    rightBtn.style.width = buttonSize + 'px';
+    rightBtn.style.height = buttonSize + 'px';
     rightBtn.style.border = 'none';
     rightBtn.style.borderRadius = '50%';
     rightBtn.style.background = 'linear-gradient(135deg, #a47551 0%, #8b5a3c 100%)';
     rightBtn.style.color = 'white';
-    rightBtn.style.fontSize = '24px';
+    rightBtn.style.fontSize = Math.floor(buttonSize * 0.48) + 'px';
     rightBtn.style.cursor = 'pointer';
     rightBtn.style.boxShadow = '0 4px 15px rgba(164, 117, 81, 0.3)';
     rightBtn.style.transition = 'all 0.2s ease';
@@ -191,16 +201,18 @@ function createSaveTheQueenGame() {
 
     container.appendChild(gameBox);
 
-    // Game logic
+    // Game logic - responsive positioning
     const ctx = canvas.getContext('2d');
-    // Make player and queen smaller for more challenge
-    const player = { x: 20, y: 100, size: 22, color: '#a47551', emoji: '🧑‍🎤' };
-    const queen = { x: 360, y: 100, size: 22, emoji: '👸' };
+    const scale = canvas.width / 400; // Scale factor based on original 400px width
+
+    // Scale all game elements
+    const player = { x: 20 * scale, y: 100 * scale, size: 22 * scale, color: '#a47551', emoji: '🧑‍🎤' };
+    const queen = { x: (canvas.width - 40 * scale), y: 100 * scale, size: 22 * scale, emoji: '👸' };
     // Three dragons, all fast and with different starting positions
     const dragons = [
-        { x: 150, y: 0, size: 28, speed: 3.5, dir: 1, emoji: '🐉' },
-        { x: 230, y: 180, size: 28, speed: 2.8, dir: -1, emoji: '🐉' },
-        { x: 300, y: 60, size: 28, speed: 3.2, dir: 1, emoji: '🐉' }
+        { x: 150 * scale, y: 0, size: 28 * scale, speed: 3.5 * scale, dir: 1, emoji: '🐉' },
+        { x: 230 * scale, y: canvas.height - 40 * scale, size: 28 * scale, speed: 2.8 * scale, dir: -1, emoji: '🐉' },
+        { x: 300 * scale, y: 60 * scale, size: 28 * scale, speed: 3.2 * scale, dir: 1, emoji: '🐉' }
     ];
     let gameOver = false;
 
@@ -236,6 +248,11 @@ function createSaveTheQueenGame() {
             if (dragon.y <= 0 || dragon.y >= canvas.height - dragon.size) {
                 dragon.dir *= -1;
             }
+        });
+
+        // Ensure dragons stay within bounds
+        dragons.forEach(dragon => {
+            dragon.y = Math.max(0, Math.min(canvas.height - dragon.size, dragon.y));
         });
         // Check collision with any dragon
         for (const dragon of dragons) {
@@ -282,18 +299,19 @@ function createSaveTheQueenGame() {
 
     function handleKey(e) {
         if (gameOver) return;
+        const moveDistance = 18 * scale; // Scale movement distance
         switch (e.key) {
             case 'ArrowUp':
-                player.y = Math.max(0, player.y - 18);
+                player.y = Math.max(0, player.y - moveDistance);
                 break;
             case 'ArrowDown':
-                player.y = Math.min(canvas.height - player.size, player.y + 18);
+                player.y = Math.min(canvas.height - player.size, player.y + moveDistance);
                 break;
             case 'ArrowLeft':
-                player.x = Math.max(0, player.x - 18);
+                player.x = Math.max(0, player.x - moveDistance);
                 break;
             case 'ArrowRight':
-                player.x = Math.min(canvas.width - player.size, player.x + 18);
+                player.x = Math.min(canvas.width - player.size, player.x + moveDistance);
                 break;
         }
         draw();
