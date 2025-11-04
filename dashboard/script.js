@@ -41,6 +41,147 @@ function createSaveTheQueenGame() {
     canvas.style.margin = '0 auto 18px auto';
     gameBox.appendChild(canvas);
 
+    // Mobile arrow controls
+    const arrowControls = document.createElement('div');
+    arrowControls.style.display = 'flex';
+    arrowControls.style.flexDirection = 'column';
+    arrowControls.style.alignItems = 'center';
+    arrowControls.style.gap = '8px';
+    arrowControls.style.marginBottom = '15px';
+
+    // Top row (Up button)
+    const topRow = document.createElement('div');
+    topRow.style.display = 'flex';
+    topRow.style.justifyContent = 'center';
+
+    const upBtn = document.createElement('button');
+    upBtn.textContent = '↑';
+    upBtn.style.width = '50px';
+    upBtn.style.height = '50px';
+    upBtn.style.border = 'none';
+    upBtn.style.borderRadius = '50%';
+    upBtn.style.background = 'linear-gradient(135deg, #a47551 0%, #8b5a3c 100%)';
+    upBtn.style.color = 'white';
+    upBtn.style.fontSize = '24px';
+    upBtn.style.cursor = 'pointer';
+    upBtn.style.boxShadow = '0 4px 15px rgba(164, 117, 81, 0.3)';
+    upBtn.style.transition = 'all 0.2s ease';
+    upBtn.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+        handleKey({ key: 'ArrowUp' });
+        upBtn.style.transform = 'scale(0.95)';
+    });
+    upBtn.addEventListener('touchend', () => {
+        upBtn.style.transform = 'scale(1)';
+    });
+    upBtn.addEventListener('mousedown', () => {
+        handleKey({ key: 'ArrowUp' });
+        upBtn.style.transform = 'scale(0.95)';
+    });
+    upBtn.addEventListener('mouseup', () => {
+        upBtn.style.transform = 'scale(1)';
+    });
+
+    topRow.appendChild(upBtn);
+    arrowControls.appendChild(topRow);
+
+    // Bottom row (Left, Down, Right buttons)
+    const bottomRow = document.createElement('div');
+    bottomRow.style.display = 'flex';
+    bottomRow.style.gap = '8px';
+
+    const leftBtn = document.createElement('button');
+    leftBtn.textContent = '←';
+    leftBtn.style.width = '50px';
+    leftBtn.style.height = '50px';
+    leftBtn.style.border = 'none';
+    leftBtn.style.borderRadius = '50%';
+    leftBtn.style.background = 'linear-gradient(135deg, #a47551 0%, #8b5a3c 100%)';
+    leftBtn.style.color = 'white';
+    leftBtn.style.fontSize = '24px';
+    leftBtn.style.cursor = 'pointer';
+    leftBtn.style.boxShadow = '0 4px 15px rgba(164, 117, 81, 0.3)';
+    leftBtn.style.transition = 'all 0.2s ease';
+    leftBtn.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+        handleKey({ key: 'ArrowLeft' });
+        leftBtn.style.transform = 'scale(0.95)';
+    });
+    leftBtn.addEventListener('touchend', () => {
+        leftBtn.style.transform = 'scale(1)';
+    });
+    leftBtn.addEventListener('mousedown', () => {
+        handleKey({ key: 'ArrowLeft' });
+        leftBtn.style.transform = 'scale(0.95)';
+    });
+    leftBtn.addEventListener('mouseup', () => {
+        leftBtn.style.transform = 'scale(1)';
+    });
+
+    const downBtn = document.createElement('button');
+    downBtn.textContent = '↓';
+    downBtn.style.width = '50px';
+    downBtn.style.height = '50px';
+    downBtn.style.border = 'none';
+    downBtn.style.borderRadius = '50%';
+    downBtn.style.background = 'linear-gradient(135deg, #a47551 0%, #8b5a3c 100%)';
+    downBtn.style.color = 'white';
+    downBtn.style.fontSize = '24px';
+    downBtn.style.cursor = 'pointer';
+    downBtn.style.boxShadow = '0 4px 15px rgba(164, 117, 81, 0.3)';
+    downBtn.style.transition = 'all 0.2s ease';
+    downBtn.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+        handleKey({ key: 'ArrowDown' });
+        downBtn.style.transform = 'scale(0.95)';
+    });
+    downBtn.addEventListener('touchend', () => {
+        downBtn.style.transform = 'scale(1)';
+    });
+    downBtn.addEventListener('mousedown', () => {
+        handleKey({ key: 'ArrowDown' });
+        downBtn.style.transform = 'scale(0.95)';
+    });
+    downBtn.addEventListener('mouseup', () => {
+        downBtn.style.transform = 'scale(1)';
+    });
+
+    const rightBtn = document.createElement('button');
+    rightBtn.textContent = '→';
+    rightBtn.style.width = '50px';
+    rightBtn.style.height = '50px';
+    rightBtn.style.border = 'none';
+    rightBtn.style.borderRadius = '50%';
+    rightBtn.style.background = 'linear-gradient(135deg, #a47551 0%, #8b5a3c 100%)';
+    rightBtn.style.color = 'white';
+    rightBtn.style.fontSize = '24px';
+    rightBtn.style.cursor = 'pointer';
+    rightBtn.style.boxShadow = '0 4px 15px rgba(164, 117, 81, 0.3)';
+    rightBtn.style.transition = 'all 0.2s ease';
+    rightBtn.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+        handleKey({ key: 'ArrowRight' });
+        rightBtn.style.transform = 'scale(0.95)';
+    });
+    rightBtn.addEventListener('touchend', () => {
+        rightBtn.style.transform = 'scale(1)';
+    });
+    rightBtn.addEventListener('mousedown', () => {
+        handleKey({ key: 'ArrowRight' });
+        rightBtn.style.transform = 'scale(0.95)';
+    });
+    rightBtn.addEventListener('mouseup', () => {
+        rightBtn.style.transform = 'scale(1)';
+    });
+
+    bottomRow.appendChild(leftBtn);
+    bottomRow.appendChild(downBtn);
+    bottomRow.appendChild(rightBtn);
+    arrowControls.appendChild(bottomRow);
+
+    // Show arrow controls for touch devices and mobile screens
+    gameBox.insertBefore(arrowControls, canvas);
+
     // Message
     const message = document.createElement('div');
     message.style.marginTop = '12px';
