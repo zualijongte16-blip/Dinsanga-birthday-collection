@@ -47,7 +47,7 @@ body {
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.10);
     backdrop-filter: blur(18px) saturate(180%);
     border: 1.5px solid rgba(255,255,255,0.25);
-    overflow: hidden;
+    overflow: visible;
     position: relative;
 }
 
@@ -60,7 +60,7 @@ body {
     border-radius: 24px 24px 0 0;
     box-shadow: 0 2px 16px 0 rgba(164, 117, 81, 0.10);
     position: relative;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .header-greeting-container h1 {
@@ -225,7 +225,7 @@ body {
     display: flex;
     justify-content: center;
     gap: 10px;
-    margin-top: -300px;
+    margin-top: -280px;
     margin-bottom: 20px;
     flex-wrap: wrap;
     background: rgba(255,255,255,0.35);
@@ -710,7 +710,7 @@ body {
 
     .dashboard-nav {
         gap: 5px;
-        margin-top: -240px;
+        margin-top: -220px;
         padding: 8px 10px;
     }
 
@@ -879,7 +879,7 @@ body {
     }
 
     .dashboard-nav {
-        margin-top: -220px;
+        margin-top: -200px;
         padding: 6px 8px;
         gap: 3px;
     }
