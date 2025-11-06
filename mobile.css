@@ -59,7 +59,7 @@
 /* Navigation - bring closer to header */
 .dashboard-nav {
     gap: 5px;
-    margin-top: -100px; /* Reduced from -500px to bring closer to header */
+    margin-top: 0; /* Set to 0 to make very near to birthday container */
     padding: 8px 10px;
 }
 
@@ -234,7 +234,7 @@
 
 /* Navigation */
 .dashboard-nav {
-    margin-top: -50px; /* Further reduced for very small screens */
+    margin-top: 0; /* Set to 0 to make very near to birthday container */
     padding: 6px 8px;
     gap: 3px;
 }
