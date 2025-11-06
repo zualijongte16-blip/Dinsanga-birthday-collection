@@ -56,21 +56,24 @@
     margin-top: 8px;
 }
 
+/* Move navigation bar right below the birthday container */
 .dashboard-nav {
-    margin-top: -35px; /* Pulls navigation bar upward to overlap slightly */
+    position: relative;   /* ensure it stays in flow */
+    margin-top: -40px;    /* pull up closer to birthday header */
     padding: 10px 12px;
-    gap: 5px;
-    position: relative;
-    z-index: 5; /* Keeps nav above background images or decorations */
-}
-
-/* Optional: add a soft shadow to make it look blended */
-.dashboard-nav {
-    background: rgba(255, 255, 255, 0.9); /* light transparent background */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(8px);
     border-radius: 16px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 10;
 }
+
 
 
 .nav-btn {
