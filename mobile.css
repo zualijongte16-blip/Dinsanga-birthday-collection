@@ -60,7 +60,7 @@
 /* Move navigation bar right below the birthday container */
 .dashboard-nav {
     position: relative;   /* ensure it stays in flow */
-    margin-top: -80px;    /* pull up closer to birthday header */
+    margin-top: -120px;    /* pull up closer to birthday header */
     padding: 10px 12px;
     display: flex;
     justify-content: space-around;
