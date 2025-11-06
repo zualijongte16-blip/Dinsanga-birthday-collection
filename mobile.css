@@ -59,7 +59,7 @@
 /* Navigation - bring closer to header */
 .dashboard-nav {
     gap: 5px;
-    margin-top: 0; /* Set to 0 to make very near to birthday container */
+    margin-top: -10px; /* Pull navigation closer to birthday container */
     padding: 8px 10px;
 }
 
@@ -234,7 +234,7 @@
 
 /* Navigation */
 .dashboard-nav {
-    margin-top: 0; /* Set to 0 to make very near to birthday container */
+    margin-top: -10px; /* Pull navigation closer to birthday container */
     padding: 6px 8px;
     gap: 3px;
 }
