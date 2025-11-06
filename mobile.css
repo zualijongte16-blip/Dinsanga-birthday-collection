@@ -56,12 +56,22 @@
     margin-top: 8px;
 }
 
-/* Navigation - bring closer to header */
 .dashboard-nav {
-    gap: 3px;
-    margin-top: -30px; /* Pull navigation closer to birthday container */
-    padding: 8px 10px;
+    margin-top: -35px; /* Pulls navigation bar upward to overlap slightly */
+    padding: 10px 12px;
+    gap: 5px;
+    position: relative;
+    z-index: 5; /* Keeps nav above background images or decorations */
 }
+
+/* Optional: add a soft shadow to make it look blended */
+.dashboard-nav {
+    background: rgba(255, 255, 255, 0.9); /* light transparent background */
+    backdrop-filter: blur(8px);
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
 
 .nav-btn {
     padding: 10px 16px;
