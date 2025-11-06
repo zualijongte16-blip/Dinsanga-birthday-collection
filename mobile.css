@@ -1,6 +1,6 @@
 /* CSS Variables for consistent spacing and sizing */
 :root {
-  --nav-overlap: -120px;
+  --nav-overlap: -200px;
   --header-height-lg: 180px;
   --header-height-md: 160px;
   --header-height-sm: 150px;
