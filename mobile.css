@@ -1,0 +1,339 @@
+/* Mobile-specific styles for screens up to 768px */
+
+/* Dashboard Container */
+.dashboard-container {
+    padding: 10px;
+    max-width: 100%;
+}
+
+/* Header adjustments */
+.dashboard-header {
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.header-greeting-container {
+    height: 180px;
+    padding: 20px 15px;
+}
+
+.header-greeting-container h1 {
+    font-size: 1.8rem;
+    padding: 8px 16px;
+}
+
+/* Images in header */
+.header-image-top-left,
+.header-image-top-right,
+.header-image-bottom-left,
+.header-image-bottom-right,
+.header-image-bottom-middle {
+    width: 60px;
+    height: 60px;
+}
+
+.header-image-top-left img,
+.header-image-top-right img,
+.header-image-bottom-left img,
+.header-image-bottom-right img,
+.header-image-bottom-middle img {
+    width: 60px;
+    height: 60px;
+}
+
+.header-video-container {
+    height: 180px;
+}
+
+.video-title {
+    font-size: 1.8rem;
+    padding: 0 15px;
+    margin-bottom: 10px;
+}
+
+.video-subtitle {
+    font-size: 1rem;
+    margin-top: 8px;
+}
+
+/* Navigation - bring closer to header */
+.dashboard-nav {
+    gap: 5px;
+    margin-top: -100px; /* Reduced from -500px to bring closer to header */
+    padding: 8px 10px;
+}
+
+.nav-btn {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+    flex: 1;
+    min-width: 0;
+}
+
+/* Section headers */
+.section-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+}
+
+.section-header h2 {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.content-section {
+    padding: 20px 15px;
+}
+
+/* Stats grid */
+.stats-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+}
+
+.welcome-card {
+    padding: 24px 16px;
+}
+
+.welcome-card h2 {
+    font-size: 1.5rem;
+}
+
+.welcome-card p {
+    font-size: 1rem;
+}
+
+.stat-card {
+    padding: 20px 24px;
+    min-width: 120px;
+}
+
+.stat-number {
+    font-size: 2rem;
+}
+
+/* Playlist mobile adjustments */
+.playlist-list {
+    gap: 15px;
+}
+
+.playlist-card {
+    padding: 16px;
+}
+
+.custom-audio-player {
+    gap: 8px;
+}
+
+.play-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+}
+
+.progress-container {
+    max-width: 250px;
+}
+
+/* Video player mobile */
+.spotify-video-player {
+    max-width: 100%;
+}
+
+.video-title {
+    padding: 12px 16px;
+    font-size: 1rem;
+}
+
+.controls-bar {
+    padding: 10px 16px;
+}
+
+.left-controls,
+.right-controls {
+    gap: 12px;
+}
+
+.time-display {
+    font-size: 0.8rem;
+}
+
+/* Chat messages mobile */
+.chat-container {
+    padding: 20px 15px;
+    margin: 0;
+    max-width: 100%;
+}
+
+.message-content {
+    max-width: 85%;
+    padding: 10px 14px;
+}
+
+.message-content p {
+    font-size: 0.9rem;
+}
+
+.timestamp {
+    font-size: 0.7rem;
+}
+
+/* Mobile-specific styles for screens up to 480px */
+
+/* Dashboard Container */
+.dashboard-container {
+    padding: 5px;
+}
+
+/* Header */
+.header-greeting-container {
+    height: 160px;
+    padding: 15px 10px;
+}
+
+.header-greeting-container h1 {
+    font-size: 1.5rem;
+    padding: 6px 12px;
+    letter-spacing: 1px;
+}
+
+/* Images */
+.header-image-top-left,
+.header-image-top-right,
+.header-image-bottom-left,
+.header-image-bottom-right,
+.header-image-bottom-middle {
+    width: 50px;
+    height: 50px;
+}
+
+.header-image-top-left img,
+.header-image-top-right img,
+.header-image-bottom-left img,
+.header-image-bottom-right img,
+.header-image-bottom-middle img {
+    width: 50px;
+    height: 50px;
+}
+
+.header-video-container {
+    height: 150px;
+}
+
+.video-title {
+    font-size: 1.4rem;
+    padding: 0 10px;
+    margin-bottom: 8px;
+}
+
+.video-subtitle {
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+/* Navigation */
+.dashboard-nav {
+    margin-top: -50px; /* Further reduced for very small screens */
+    padding: 6px 8px;
+    gap: 3px;
+}
+
+.nav-btn {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+    flex: 1;
+    min-width: 0;
+}
+
+/* Content */
+.content-section {
+    padding: 15px 10px;
+}
+
+.welcome-card {
+    padding: 20px 12px;
+}
+
+.welcome-card h2 {
+    font-size: 1.3rem;
+}
+
+.welcome-card p {
+    font-size: 0.95rem;
+}
+
+.stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.stat-card {
+    padding: 16px 20px;
+    min-width: 100px;
+}
+
+.stat-card h3 {
+    font-size: 1rem;
+}
+
+.stat-number {
+    font-size: 1.8rem;
+}
+
+/* Playlist */
+.playlist-card {
+    padding: 12px;
+}
+
+.play-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
+}
+
+.progress-container {
+    max-width: 200px;
+}
+
+.time-display {
+    font-size: 0.8rem;
+    min-width: 60px;
+}
+
+/* Video player */
+.video-title {
+    font-size: 0.9rem;
+    padding: 10px 12px;
+}
+
+.controls-bar {
+    padding: 8px 12px;
+}
+
+.left-controls,
+.right-controls {
+    gap: 8px;
+}
+
+/* Chat */
+.chat-container {
+    padding: 15px 10px;
+}
+
+.message-content {
+    max-width: 90%;
+    padding: 8px 12px;
+}
+
+.message-content p {
+    font-size: 0.85rem;
+}
+
+.timestamp {
+    font-size: 0.65rem;
+}
+
+.section-header h2 {
+    font-size: 1.3rem;
+}
