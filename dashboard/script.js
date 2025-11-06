@@ -274,7 +274,7 @@ function createSaveTheQueenGame() {
                      + '<p style="color: #5c3a1a; font-size: 1.1rem; line-height: 1.6; margin: 10px 0; font-style: italic;">'
                      + '"My dearest Dinsanga, my hero, my Damdawimumlian and my everything... 💖<br><br>'
                      + 'Thank you for saving me and choosing me as your queen. '
-                     + 'You are my knight in shining armor, my best friend, and the love of my life. '
+                     + 'You are my knight in shining armor, my best friend, and the love of my life. A changa ka sual thin chung pawha dam deuha minlo dawh thin vangin khamsamidaaaa. '
                      + 'Every moment with you is magical, and I am so blessed to have you by my side.<br><br>'
                      + 'I love you more than words can express, and I promise to love you for all eternity. '
                      + 'Happy Birthday, my love! Let\'s celebrate this day for a long year and create countless beautiful memories together! 🌟<br><br>'
