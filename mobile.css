@@ -1,224 +1,52 @@
-/* Mobile-specific styles for screens up to 768px */
+/* CSS Variables for consistent spacing and sizing */
+:root {
+  --nav-overlap: -40px;
+  --header-height-lg: 180px;
+  --header-height-md: 160px;
+  --header-height-sm: 150px;
+  --image-size-lg: 60px;
+  --image-size-md: 50px;
+  --padding-lg: 20px;
+  --padding-md: 15px;
+  --padding-sm: 10px;
+  --border-radius: 16px;
+  --nav-blur: 8px;
+  --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  --nav-bg: rgba(255, 255, 255, 0.9);
+  --nav-width: 90%;
+}
 
-/* Dashboard Container */
+/* ====== Mobile Styles (up to 768px) ====== */
+
 .dashboard-container {
-    padding: 10px;
-    max-width: 100%;
-}
-
-/* Header adjustments */
-.dashboard-header {
-    padding: 0;
-    margin-bottom: 20px;
-}
-
-.header-greeting-container {
-    height: 180px;
-    padding: 20px 15px;
-}
-
-.header-greeting-container h1 {
-    font-size: 1.8rem;
-    padding: 8px 16px;
-}
-
-/* Images in header */
-.header-image-top-left,
-.header-image-top-right,
-.header-image-bottom-left,
-.header-image-bottom-right,
-.header-image-bottom-middle {
-    width: 60px;
-    height: 60px;
-}
-
-.header-image-top-left img,
-.header-image-top-right img,
-.header-image-bottom-left img,
-.header-image-bottom-right img,
-.header-image-bottom-middle img {
-    width: 60px;
-    height: 60px;
-}
-
-.header-video-container {
-    height: 180px;
-}
-
-.video-title {
-    font-size: 1.8rem;
-    padding: 0 15px;
-    margin-bottom: 10px;
-}
-
-.video-subtitle {
-    font-size: 1rem;
-    margin-top: 8px;
-}
-
-/* Move navigation bar right below the birthday container */
-.dashboard-nav {
-    position: relative;   /* ensure it stays in flow */
-    margin-top: -40px;    /* pull up closer to birthday header */
-    padding: 10px 12px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(8px);
-    border-radius: 16px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    z-index: 10;
-}
-
-
-
-.nav-btn {
-    padding: 10px 16px;
-    font-size: 0.9rem;
-    flex: 1;
-    min-width: 0;
-}
-
-/* Section headers */
-.section-header {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 15px;
-}
-
-.section-header h2 {
-    font-size: 1.5rem;
-    text-align: center;
-}
-
-.content-section {
-    padding: 20px 15px;
-}
-
-/* Stats grid */
-.stats-grid {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 15px;
-}
-
-.welcome-card {
-    padding: 24px 16px;
-}
-
-.welcome-card h2 {
-    font-size: 1.5rem;
-}
-
-.welcome-card p {
-    font-size: 1rem;
-}
-
-.stat-card {
-    padding: 20px 24px;
-    min-width: 120px;
-}
-
-.stat-number {
-    font-size: 2rem;
-}
-
-/* Playlist mobile adjustments */
-.playlist-list {
-    gap: 15px;
-}
-
-.playlist-card {
-    padding: 16px;
-}
-
-.custom-audio-player {
-    gap: 8px;
-}
-
-.play-btn {
-    width: 50px;
-    height: 50px;
-    font-size: 1.2rem;
-}
-
-.progress-container {
-    max-width: 250px;
-}
-
-/* Video player mobile */
-.spotify-video-player {
-    max-width: 100%;
-}
-
-.video-title {
-    padding: 12px 16px;
-    font-size: 1rem;
-}
-
-.controls-bar {
-    padding: 10px 16px;
-}
-
-.left-controls,
-.right-controls {
-    gap: 12px;
-}
-
-.time-display {
-    font-size: 0.8rem;
-}
-
-/* Chat messages mobile */
-.chat-container {
-    padding: 20px 15px;
-    margin: 0;
-    max-width: 100%;
-}
-
-.message-content {
-    max-width: 85%;
-    padding: 10px 14px;
-}
-
-.message-content p {
-    font-size: 0.9rem;
-}
-
-.timestamp {
-    font-size: 0.7rem;
-}
-
-/* Mobile-specific styles for screens up to 480px */
-
-/* Dashboard Container */
-.dashboard-container {
-    padding: 5px;
+  padding: var(--padding-sm);
+  max-width: 100%;
 }
 
 /* Header */
+.dashboard-header {
+  padding: 0;
+  margin-bottom: var(--padding-lg);
+}
+
 .header-greeting-container {
-    height: 160px;
-    padding: 15px 10px;
+  height: var(--header-height-lg);
+  padding: var(--padding-lg) 15px;
 }
 
 .header-greeting-container h1 {
-    font-size: 1.5rem;
-    padding: 6px 12px;
-    letter-spacing: 1px;
+  font-size: 1.8rem;
+  padding: 8px 16px;
 }
 
-/* Images */
+/* Header Images - unified */
 .header-image-top-left,
 .header-image-top-right,
 .header-image-bottom-left,
 .header-image-bottom-right,
 .header-image-bottom-middle {
-    width: 50px;
-    height: 50px;
+  width: var(--image-size-lg);
+  height: var(--image-size-lg);
 }
 
 .header-image-top-left img,
@@ -226,160 +54,312 @@
 .header-image-bottom-left img,
 .header-image-bottom-right img,
 .header-image-bottom-middle img {
-    width: 50px;
-    height: 50px;
+  width: var(--image-size-lg);
+  height: var(--image-size-lg);
 }
 
+/* Header Video Container */
 .header-video-container {
-    height: 150px;
+  height: var(--header-height-lg);
 }
 
 .video-title {
-    font-size: 1.4rem;
-    padding: 0 10px;
-    margin-bottom: 8px;
+  font-size: 1.8rem;
+  padding: 0 15px;
+  margin-bottom: 10px;
 }
 
 .video-subtitle {
-    font-size: 0.9rem;
-    margin-top: 5px;
+  font-size: 1rem;
+  margin-top: 8px;
 }
 
-/* Move navigation bar right below the birthday container */
+/* Navigation Bar */
 .dashboard-nav {
-    position: relative;   /* ensure it stays in flow */
-    margin-top: -40px;    /* pull up closer to birthday header */
-    padding: 10px 12px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(8px);
-    border-radius: 16px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    z-index: 10;
+  position: relative;
+  margin-top: var(--nav-overlap);
+  padding: var(--padding-sm) 12px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: var(--nav-bg);
+  backdrop-filter: blur(var(--nav-blur));
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  width: var(--nav-width);
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 10;
 }
-
 
 .nav-btn {
-    padding: 8px 12px;
-    font-size: 0.8rem;
-    flex: 1;
-    min-width: 0;
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  flex: 1;
+  min-width: 0;
 }
 
-/* Content */
+/* Section Headers */
+.section-header {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 15px;
+}
+
+.section-header h2 {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+/* Content Section */
 .content-section {
-    padding: 15px 10px;
+  padding: var(--padding-lg) var(--padding-md);
 }
 
+/* Welcome Card */
 .welcome-card {
-    padding: 20px 12px;
+  padding: 24px 16px;
 }
 
 .welcome-card h2 {
-    font-size: 1.3rem;
+  font-size: 1.5rem;
 }
 
 .welcome-card p {
-    font-size: 0.95rem;
+  font-size: 1rem;
 }
 
+/* Stats Grid */
 .stats-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 15px;
 }
 
 .stat-card {
-    padding: 16px 20px;
-    min-width: 100px;
-}
-
-.stat-card h3 {
-    font-size: 1rem;
+  padding: 20px 24px;
+  min-width: 120px;
 }
 
 .stat-number {
-    font-size: 1.8rem;
+  font-size: 2rem;
 }
 
 /* Playlist */
+.playlist-list {
+  gap: 15px;
+}
+
 .playlist-card {
-    padding: 12px;
+  padding: 16px;
+}
+
+.custom-audio-player {
+  gap: 8px;
 }
 
 .play-btn {
-    width: 45px;
-    height: 45px;
-    font-size: 1.1rem;
+  width: 50px;
+  height: 50px;
+  font-size: 1.2rem;
 }
 
 .progress-container {
-    max-width: 200px;
+  max-width: 250px;
 }
 
-.time-display {
-    font-size: 0.8rem;
-    min-width: 60px;
-}
-
-/* Video player */
-.video-title {
-    font-size: 0.9rem;
-    padding: 10px 12px;
+/* Video Player */
+.spotify-video-player {
+  max-width: 100%;
 }
 
 .controls-bar {
-    padding: 8px 12px;
+  padding: 10px 16px;
 }
 
 .left-controls,
 .right-controls {
-    gap: 8px;
+  gap: 12px;
+}
+
+.time-display {
+  font-size: 0.8rem;
 }
 
 /* Chat */
 .chat-container {
-    padding: 15px 10px;
+  padding: var(--padding-lg) var(--padding-md);
+  margin: 0;
+  max-width: 100%;
 }
 
 .message-content {
-    max-width: 90%;
-    padding: 8px 12px;
+  max-width: 85%;
+  padding: 10px 14px;
 }
 
 .message-content p {
-    font-size: 0.85rem;
+  font-size: 0.9rem;
 }
 
 .timestamp {
-    font-size: 0.65rem;
+  font-size: 0.7rem;
 }
 
-.section-header h2 {
+/* ====== Small Mobile Styles (up to 480px) ====== */
+@media screen and (max-width: 480px) {
+  :root {
+    --image-size-lg: 50px;
+    --padding-lg: 15px;
+  }
+
+  .dashboard-container {
+    padding: 5px;
+  }
+
+  /* Header */
+  .header-greeting-container {
+    height: var(--header-height-md);
+    padding: var(--padding-lg) 10px;
+  }
+
+  .header-greeting-container h1 {
+    font-size: 1.5rem;
+    padding: 6px 12px;
+    letter-spacing: 1px;
+  }
+
+  /* Images */
+  .header-image-top-left,
+  .header-image-top-right,
+  .header-image-bottom-left,
+  .header-image-bottom-right,
+  .header-image-bottom-middle {
+    width: var(--image-size-md);
+    height: var(--image-size-md);
+  }
+
+  .header-image-top-left img,
+  .header-image-top-right img,
+  .header-image-bottom-left img,
+  .header-image-bottom-right img,
+  .header-image-bottom-middle img {
+    width: var(--image-size-md);
+    height: var(--image-size-md);
+  }
+
+  /* Header Video */
+  .header-video-container {
+    height: var(--header-height-sm);
+  }
+
+  .video-title {
+    font-size: 1.4rem;
+    padding: 0 10px;
+    margin-bottom: 8px;
+  }
+
+  .video-subtitle {
+    font-size: 0.9rem;
+    margin-top: 5px;
+  }
+
+  /* Navigation */
+  .nav-btn {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+
+  /* Content */
+  .content-section {
+    padding: var(--padding-lg) 10px;
+  }
+
+  .section-header h2 {
     font-size: 1.3rem;
-}
-@media screen and (max-width: 768px) {
-  .dashboard-nav {
-    position: relative !important;  /* override fixed positioning */
-    bottom: auto !important;        /* remove bottom attachment */
-    top: auto !important;
-    margin-top: -40px !important;   /* bring closer to the birthday header */
+  }
+
+  /* Welcome Card */
+  .welcome-card {
+    padding: 20px 12px;
+  }
+
+  .welcome-card h2 {
+    font-size: 1.3rem;
+  }
+
+  .welcome-card p {
+    font-size: 0.95rem;
+  }
+
+  /* Stats Grid */
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .stat-card {
+    padding: 16px 20px;
+    min-width: 100px;
+  }
+
+  .stat-card h3 {
+    font-size: 1rem;
+  }
+
+  .stat-number {
+    font-size: 1.8rem;
+  }
+
+  /* Playlist */
+  .playlist-card {
+    padding: 12px;
+  }
+
+  .play-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
+  }
+
+  .progress-container {
+    max-width: 200px;
+  }
+
+  .time-display {
+    font-size: 0.8rem;
+    min-width: 60px;
+  }
+
+  /* Video Player */
+  .video-title {
+    font-size: 0.9rem;
     padding: 10px 12px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(8px);
-    border-radius: 16px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    z-index: 10;
+  }
+
+  .controls-bar {
+    padding: 8px 12px;
+  }
+
+  .left-controls,
+  .right-controls {
+    gap: 8px;
+  }
+
+  /* Chat */
+  .chat-container {
+    padding: var(--padding-lg) 10px;
+  }
+
+  .message-content {
+    max-width: 90%;
+    padding: 8px 12px;
+  }
+
+  .message-content p {
+    font-size: 0.85rem;
+  }
+
+  .timestamp {
+    font-size: 0.65rem;
   }
 }
-
