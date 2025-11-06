@@ -245,12 +245,24 @@
     margin-top: 5px;
 }
 
-/* Navigation */
+/* Move navigation bar right below the birthday container */
 .dashboard-nav {
-    margin-top: -10px; /* Pull navigation closer to birthday container */
-    padding: 6px 8px;
-    gap: 3px;
+    position: relative;   /* ensure it stays in flow */
+    margin-top: -40px;    /* pull up closer to birthday header */
+    padding: 10px 12px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(8px);
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 10;
 }
+
 
 .nav-btn {
     padding: 8px 12px;
