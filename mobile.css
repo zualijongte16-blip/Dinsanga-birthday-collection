@@ -58,8 +58,8 @@
 
 /* Navigation - bring closer to header */
 .dashboard-nav {
-    gap: 5px;
-    margin-top: -10px; /* Pull navigation closer to birthday container */
+    gap: 3px;
+    margin-top: -30px; /* Pull navigation closer to birthday container */
     padding: 8px 10px;
 }
 
